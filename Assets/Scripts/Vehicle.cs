@@ -4,25 +4,10 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    [Range(0,15)]
-    [SerializeField] float movementSpeed = 5f;
-
-    private bool moveRight = true;
-
-    void Update()
+        
+    public void StartMoving(Vector3 velocity)
     {
-        if (moveRight)
-        {
-            transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
-        }
+        GetComponent<Rigidbody2D>().velocity = velocity;
     }
-
-    public void SetMovementDirectionToLeft()
-    {
-        moveRight = false;
-    }
+        
 }
