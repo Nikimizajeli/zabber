@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private int leftPlayspaceBorder;
+    private int rightPlayspaceBorder;
+    private int bottomPlayspaceBorder = 1;
+    private int topPlayspaceBorder = 11;
 
     private Animator myAnimator;
 
@@ -11,29 +15,52 @@ public class Player : MonoBehaviour
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
+
+        SetMovementBounds();
+        
     }
     private void Update()
     {
         Move();
     }
 
+    private void SetMovementBounds()
+    {
+        leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);
+        
+        rightPlayspaceBorder = Mathf.FloorToInt(Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x);
+        
+    }
+
     private void Move()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            ProcessMove(Vector3.up, Quaternion.Euler(0,0,180));
+             if (transform.position.y < topPlayspaceBorder)
+             {
+                 ProcessMove(Vector3.up, Quaternion.Euler(0, 0, 180));
+             }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))       // else if, ¿eby nie sprawdzaæ kolejnych strza³ek jeœli któraœ 'wy¿ej' jest wciœniêta
         {
-            ProcessMove(Vector3.down, Quaternion.identity);
+            if (transform.position.y > bottomPlayspaceBorder)
+            {
+                ProcessMove(Vector3.down, Quaternion.identity);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            ProcessMove(Vector3.right, Quaternion.Euler(0, 0, 90));
+            if (transform.position.x < rightPlayspaceBorder)
+            {
+                ProcessMove(Vector3.right, Quaternion.Euler(0, 0, 90));
+            }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            ProcessMove(Vector3.left, Quaternion.Euler(0, 0, -90));
+            if (transform.position.x > leftPlayspaceBorder)
+            {
+                ProcessMove(Vector3.left, Quaternion.Euler(0, 0, -90));
+            }
         }
     }
 

@@ -169,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191972666}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 354572702}
@@ -379,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645261729760878084, guid: 5a5f03f387d55ae4fa6e75e12d5ebdd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4645261729760878084, guid: 5a5f03f387d55ae4fa6e75e12d5ebdd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -436,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2941278265734223822, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2941278265734223822, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -470,9 +470,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5564907018550441927, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564907018964818463, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spots
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564907019219454913, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564907019564829761, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spot (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564907019737428699, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564907019898113968, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
+      propertyPath: m_Name
+      value: Win Spot (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6771175140005678705, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
       propertyPath: m_Name
-      value: Background
+      value: Playspace
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29f37e57f21b1744ad3cde3da55b4c7, type: 3}
