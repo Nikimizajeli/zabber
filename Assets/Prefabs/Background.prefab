@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5564907018550441924}
   - component: {fileID: 5564907018550441925}
   m_Layer: 0
-  m_Name: Frog Spot (1)
+  m_Name: Win Spot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2644234236487300796, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5564907018964818461}
   - component: {fileID: 5564907018964818460}
   m_Layer: 0
-  m_Name: Grass Top
+  m_Name: Win Spots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5564907019103097615}
   - component: {fileID: 5564907019103097614}
-  m_Layer: 0
+  - component: {fileID: 386710831}
+  m_Layer: 7
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,8 +238,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4985146920864291530, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -251,6 +252,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &386710831
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564907019103097609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 25, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &5564907019219454913
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +289,7 @@ GameObject:
   - component: {fileID: 5564907019219454918}
   - component: {fileID: 5564907019219454919}
   m_Layer: 0
-  m_Name: Frog Spot (4)
+  m_Name: Win Spot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,8 +346,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2644234236487300796, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -344,7 +371,7 @@ GameObject:
   - component: {fileID: 5564907019564829766}
   - component: {fileID: 5564907019564829767}
   m_Layer: 0
-  m_Name: Frog Spot (0)
+  m_Name: Win Spot (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,8 +428,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2644234236487300796, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -426,7 +453,7 @@ GameObject:
   - component: {fileID: 5564907019737428696}
   - component: {fileID: 5564907019737428697}
   m_Layer: 0
-  m_Name: Frog Spot (3)
+  m_Name: Win Spot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,8 +510,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2644234236487300796, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -508,7 +535,7 @@ GameObject:
   - component: {fileID: 5564907019898113969}
   - component: {fileID: 5564907019898113974}
   m_Layer: 0
-  m_Name: Frog Spot (2)
+  m_Name: Win Spot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,8 +592,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 2644234236487300796, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -647,8 +674,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2739054412037551676, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -729,8 +756,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2739054412037551676, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -811,8 +838,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 209109581
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 178171114782616588, guid: a06a76503ae09cf4da872b32d7fc83fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

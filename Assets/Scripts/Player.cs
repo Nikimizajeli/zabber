@@ -70,4 +70,11 @@ public class Player : MonoBehaviour
         transform.rotation = facingRotation;
         myAnimator.SetTrigger("jumpTrigger");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        
+        
+    }
 }
