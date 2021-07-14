@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7800620449190842773}
   - component: {fileID: 5114870971971582651}
   - component: {fileID: 8827760433347166251}
-  - component: {fileID: 3199879100775182658}
+  - component: {fileID: 8820843103559048626}
   m_Layer: 8
   m_Name: Log Long
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.644737, y: 1.1}
   m_EdgeRadius: 0
---- !u!114 &3199879100775182658
+--- !u!114 &8820843103559048626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3494676400388600116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51851ad1cb26c304baffbf37c5107ddd, type: 3}
+  m_Script: {fileID: 11500000, guid: adbdbc906c13f834f90e9a70d4bc97a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
