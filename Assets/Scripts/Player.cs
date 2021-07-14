@@ -75,8 +75,33 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.position = startingPosition;
+        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Logs")))
+        {
+            transform.parent = collision.gameObject.transform;
+        
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!(transform.parent = null))
+        {
+            transform.parent = null;
+        }
+        
+    }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Logs"))) { return; }
+
+        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Hazards")))
+        {
+            transform.position = startingPosition;
+        }
         
         
     }
+
 }

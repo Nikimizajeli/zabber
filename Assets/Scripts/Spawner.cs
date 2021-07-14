@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     {
         int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
         Vehicle vehicle = Instantiate(vehiclePrefabs[vehicleIndex], transform.position, Quaternion.identity);
+        vehicle.transform.parent = transform;
         if (spawnLeft)
         {
             vehicle.StartMoving(Vector3.left * movementSpeed);
