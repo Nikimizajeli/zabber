@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour mog¹ zostaæ u¿yte w Player
 {
-    private int leftPlayspaceBorder;
-    private int rightPlayspaceBorder;
+    private int leftPlayspaceBorder;        // enkapsulacja - dostêp 'z zewn¹trz' jest ograniczony
+    private int rightPlayspaceBorder;       // modyfikator dostêpu private - pole jest dostêpne tylko dla metod klasy w której siê znajduje
     private int bottomPlayspaceBorder = 1;
     private int topPlayspaceBorder = 11;
 
     private Animator myAnimator;
+    private Vector3 startingPosition;
 
-
+    // konstruktor domyœlny - modyfikator dostêpu public, brak argumentów, inicjuje wartoœci pól zerem/false/null
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
+        startingPosition = transform.position;
 
         SetMovementBounds();
         
@@ -26,9 +28,9 @@ public class Player : MonoBehaviour
 
     private void SetMovementBounds()
     {
-        leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);
+        leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);    // new - wywo³anie konstruktora struktury Vector3
         
-        rightPlayspaceBorder = Mathf.FloorToInt(Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0)).x);
+        rightPlayspaceBorder = Mathf.FloorToInt(Camera.main.ViewportToWorldPoint(new Vector3(1, 0)).x);     // inne przeci¹¿enie konstruktora Vector3, parametry x i y, a z = 0
         
     }
 
@@ -73,7 +75,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        transform.position = startingPosition;
         
         
     }

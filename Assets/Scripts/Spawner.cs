@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour
 
     bool keepSpawning = true;
     
-    IEnumerator Start()
+    IEnumerator Start()         //coroutine
     {
         while (keepSpawning)
         {
