@@ -9,6 +9,9 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     private int bottomPlayspaceBorder = 1;
     private int topPlayspaceBorder = 11;
 
+    private const string HazardsLayerName = "Hazards";  // stringi przypisane do sta³ych, zeby unikaæ literówek
+    private const string LogsLayerName = "Logs";
+
     private Animator myAnimator;
     private Vector3 startingPosition;
 
@@ -26,7 +29,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         Move();
     }
 
-    private void SetMovementBounds()
+    private void SetMovementBounds()                    // ograniczenie ruchu ¿aby lewo/prawo do brzegów kamery
     {
         leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);    // new - wywo³anie konstruktora struktury Vector3
         
@@ -66,7 +69,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         }
     }
 
-    private void ProcessMove(Vector3 deltaPosition, Quaternion facingRotation)
+    private void ProcessMove(Vector3 deltaPosition, Quaternion facingRotation)      // kod powtarzany kilka razy wyodrêbniony jako oddzielna metoda
     {
         transform.position += deltaPosition;
         transform.rotation = facingRotation;
@@ -75,9 +78,9 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Logs")))
+        if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(LogsLayerName)))
         {
-            transform.parent = collision.gameObject.transform;
+            transform.parent = collision.gameObject.transform;                   // przypisanie k³ody/¿ó³wia jako rodzica ¿aby, ¿eby zsynchronizowaæ ich ruch w relacji do œwiata
         
         }
     }
@@ -94,9 +97,9 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Logs"))) { return; }
+        if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(LogsLayerName))) { return; }
 
-        if (gameObject.GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask("Hazards")))
+        if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(HazardsLayerName)))
         {
             transform.position = startingPosition;
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6080127652830296402}
   - component: {fileID: 9140619589548446332}
   - component: {fileID: 4801730338100979948}
-  - component: {fileID: 4740282238161412770}
+  - component: {fileID: 1476382923810843663}
   m_Layer: 8
   m_Name: Log Medium
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.61, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4740282238161412770
+--- !u!114 &1476382923810843663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 602981734455958003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adbdbc906c13f834f90e9a70d4bc97a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 51851ad1cb26c304baffbf37c5107ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

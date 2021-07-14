@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [Tooltip("Spawns vehicles moving to the left instead of right when checked")]       // tooltip do serializowanego pola poni¿ej
     [SerializeField] bool spawnLeft = false;
-    [Range(0, 15)]
+    [Tooltip("Movement speed of spawned vehicles"), Range(0, 15)]                                          // slider do serializowanego pola poni¿ej
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float minSpawnDelay = 2f;
     [SerializeField] float maxSpawnDelay = 5f;
@@ -25,15 +26,20 @@ public class Spawner : MonoBehaviour
     private void SpawnVehicle()
     {
         int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
-        Vehicle vehicle = Instantiate(vehiclePrefabs[vehicleIndex], transform.position, Quaternion.identity);
-        vehicle.transform.parent = transform;
+        Vehicle vehicle = Instantiate(vehiclePrefabs[vehicleIndex],         // klonowanie obiektu
+                                        transform.position, 
+                                        Quaternion.identity);           
+        vehicle.transform.parent = transform;                       // przypisanie spawnera jako rodzica klonowanych obiektów dla porz¹dku w hierarchy
         if (spawnLeft)
         {
             vehicle.StartMoving(Vector3.left * movementSpeed);
+            vehicle.FlipHorizontally();
         }
         else
         {
             vehicle.StartMoving(Vector3.right * movementSpeed);
         }
     }
+
+
 }
