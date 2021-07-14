@@ -10,7 +10,7 @@ public class Vehicle : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = velocity;
     }
 
-    public virtual void FlipHorizontally()          // virtual, nie abstract - zebym móg³, ale nie musia³ zaimplementowaæ metodê inaczej w klasie pochodnej
+    public virtual void FlipHorizontally()          // virtual, nie abstract - zebym mogl, ale nie musial zaimplementowac metode inaczej w klasie pochodnej
     {
         transform.localScale = new Vector3(-1, 1, 1);
     }

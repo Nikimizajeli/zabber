@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour mog¹ zostaæ u¿yte w Player
+public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour moga zostac uzyte w Player
 {
-    private int leftPlayspaceBorder;        // enkapsulacja - dostêp 'z zewn¹trz' jest ograniczony
-    private int rightPlayspaceBorder;       // modyfikator dostêpu private - pole jest dostêpne tylko dla metod klasy w której siê znajduje
+    private int leftPlayspaceBorder;        // enkapsulacja - dostep 'z zewnatrz' jest ograniczony
+    private int rightPlayspaceBorder;       // modyfikator dostepu private - pole jest dostepne tylko dla metod klasy w ktorej siê znajduje
     private int bottomPlayspaceBorder = 1;
     private int topPlayspaceBorder = 11;
 
-    private const string HazardsLayerName = "Hazards";  // stringi przypisane do sta³ych, zeby unikaæ literówek
+    private const string HazardsLayerName = "Hazards";  // stringi przypisane do stalych, zeby unikac literowek
     private const string LogsLayerName = "Logs";
 
     private Animator myAnimator;
     private Vector3 startingPosition;
 
-    // konstruktor domyœlny - modyfikator dostêpu public, brak argumentów, inicjuje wartoœci pól zerem/false/null
+    // konstruktor domyslny - modyfikator dostepu public, brak argumentow, inicjuje wartosci pol zerem/false/null
     private void Start()
     {
-        myAnimator = GetComponent<Animator>();
-        startingPosition = transform.position;
+        myAnimator = GetComponent<Animator>();      // referencja do animatora, zeby nie wykonywac GetComponent przy kazdym ruchu
+        startingPosition = transform.position;      // zapisanie startowej pozycji zaby, zeby pojawiac sie w tym samym miejscu po stracie zycia
 
         SetMovementBounds();
         
@@ -29,11 +29,11 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         Move();
     }
 
-    private void SetMovementBounds()                    // ograniczenie ruchu ¿aby lewo/prawo do brzegów kamery
+    private void SetMovementBounds()                    // ograniczenie ruchu zaby lewo/prawo do brzegow kamery
     {
-        leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);    // new - wywo³anie konstruktora struktury Vector3
+        leftPlayspaceBorder = Mathf.CeilToInt(Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0)).x);    // new - wywolanie konstruktora struktury Vector3
         
-        rightPlayspaceBorder = Mathf.FloorToInt(Camera.main.ViewportToWorldPoint(new Vector3(1, 0)).x);     // inne przeci¹¿enie konstruktora Vector3, parametry x i y, a z = 0
+        rightPlayspaceBorder = Mathf.FloorToInt(Camera.main.ViewportToWorldPoint(new Vector3(1, 0)).x);     // inne przeciazenie konstruktora Vector3, parametry x i y, a z = 0
         
     }
 
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
                  ProcessMove(Vector3.up, Quaternion.Euler(0, 0, 180));
              }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))       // else if, ¿eby nie sprawdzaæ kolejnych strza³ek jeœli któraœ 'wy¿ej' jest wciœniêta
+        else if (Input.GetKeyDown(KeyCode.DownArrow))       // else if, zeby nie sprawdzac kolejnych strzalek jesli ktoras 'wyzej' jest wcisnieta
         {
             if (transform.position.y > bottomPlayspaceBorder)
             {
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         }
     }
 
-    private void ProcessMove(Vector3 deltaPosition, Quaternion facingRotation)      // kod powtarzany kilka razy wyodrêbniony jako oddzielna metoda
+    private void ProcessMove(Vector3 deltaPosition, Quaternion facingRotation)      // kod powtarzany kilka razy wyodrebniony jako oddzielna metoda
     {
         transform.position += deltaPosition;
         transform.rotation = facingRotation;
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     {
         if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(LogsLayerName)))
         {
-            transform.parent = collision.gameObject.transform;                   // przypisanie k³ody/¿ó³wia jako rodzica ¿aby, ¿eby zsynchronizowaæ ich ruch w relacji do œwiata
+            transform.parent = collision.gameObject.transform;                   // przypisanie klody/zolwia jako rodzica zaby, zeby zsynchronizowac ich ruch w relacji do swiata
         
         }
     }
