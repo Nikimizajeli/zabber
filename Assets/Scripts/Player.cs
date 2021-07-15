@@ -38,6 +38,11 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     private void Update()
     {
         Move();
+
+        if(transform.position.x > rightPlayspaceBorder || transform.position.x < leftPlayspaceBorder)           // hit za wyjechanie poza ekran
+        {
+            HandleHit();
+        }
     }
 
     private void SetMovementBounds()                    // ograniczenie ruchu zaby lewo/prawo do brzegow kamery
