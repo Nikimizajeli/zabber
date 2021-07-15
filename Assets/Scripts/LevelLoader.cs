@@ -27,4 +27,9 @@ public class LevelLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public int GetCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
 }

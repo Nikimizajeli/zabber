@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour moga zostac uzyte w Player
 {
+    [SerializeField] GameObject deathIconPrefab;
+
     private int leftPlayspaceBorder;        // enkapsulacja - dostep 'z zewnatrz' jest ograniczony
     private int rightPlayspaceBorder;       // modyfikator dostepu private - pole jest dostepne tylko dla metod klasy w ktorej siê znajduje
     private int bottomPlayspaceBorder = 1;
@@ -126,11 +128,20 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
         if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(HazardsLayerName)))
         {
-            FindObjectOfType<GameController>().LoseLife();
+            HandleHit();
         }
 
 
     }
+
+    public void HandleHit()
+    {
+        var deathIcon = Instantiate(deathIconPrefab, transform.position, Quaternion.identity);
+        Destroy(deathIcon, 1);
+        FindObjectOfType<GameController>().LoseLife();
+        ResetPosition();
+    }
+
 
     public void ResetPosition()
     {

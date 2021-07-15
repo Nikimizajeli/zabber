@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
         timeDisplay.value += Time.deltaTime;
         if (timeDisplay.value >= timeLimit)
         {
-            LoseLife();
+            FindObjectOfType<Player>().HandleHit();
         }
     }
         
@@ -63,7 +63,6 @@ public class GameController : MonoBehaviour
         }
         livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
         ResetTimer();
-        FindObjectOfType<Player>().ResetPosition();
     }
 
     public void ResetTimer()
@@ -74,6 +73,16 @@ public class GameController : MonoBehaviour
     public void LevelCompleted()
     {
         Debug.Log("Victory");
+        totalScore.Add(currentLevelScore);
+        foreach(var score in totalScore)
+        {
+            Debug.Log(score);
+        }
+        
+        // add score to total
+        // reset level score
+        // "you win" canvas
+        // load next scene
         
     }
 
