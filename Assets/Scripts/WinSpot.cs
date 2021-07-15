@@ -25,6 +25,7 @@ public class WinSpot : MonoBehaviour
         if (winSpotsWithFrogs >= winSpotsNumber)
         {
             FindObjectOfType<GameController>().LevelCompleted();
+            return;
         }
         FindObjectOfType<Player>().ResetPosition();
         FindObjectOfType<GameController>().ResetTimer();

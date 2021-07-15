@@ -9,18 +9,15 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
+        FindObjectOfType<GameController>().ResetGameSession();
     }
 
     public void LoadNextScene()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
-    }
-
-    public void LoadGameOverScene()
-    {
-        SceneManager.LoadScene("Game Over");
     }
 
     public void QuitGame()

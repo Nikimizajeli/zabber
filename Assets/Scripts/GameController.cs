@@ -14,11 +14,17 @@ public class GameController : MonoBehaviour
     [SerializeField] Slider timeDisplay;
     [Header("Score")] 
     [SerializeField] Text scoreDisplay;
-    public int pointsPerSecondLeft = 50;
-    public int pointsPerLaneVisited = 50;
+    [SerializeField] int pointsPerSecondLeft = 50;
+    [SerializeField] int pointsPerLaneVisited = 50;
+    [Header("Popup Canvas")]
+    [SerializeField] GameObject levelCompletedCanvas;
+    [SerializeField] GameObject gameOverCanvas;
+    [SerializeField] float delayOnLevelComplete = 3f;
 
-    private List<int> totalScore;
+
+    private List<int> scoreList;
     private int currentLevelScore;
+    private int totalScore;
 
     private void Awake()
     {
@@ -36,12 +42,16 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        levelCompletedCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+
         timeDisplay.maxValue = timeLimit;
         
         livesDisplayText.text = numberOfLives.ToString();
 
-        totalScore = new List<int>();
+        scoreList = new List<int>();
         currentLevelScore = 0;
+        totalScore = 0;
         scoreDisplay.text = currentLevelScore.ToString();
     }
 
@@ -59,7 +69,15 @@ public class GameController : MonoBehaviour
         numberOfLives--;
         if (numberOfLives <= 0)
         {
-            Debug.Log("GameOver");
+            Time.timeScale = 0;
+            scoreList.Add(currentLevelScore);
+            foreach(var score in scoreList)
+            {
+                totalScore += score;
+            }
+
+            gameOverCanvas.SetActive(true);
+            gameOverCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = "Total score: " + totalScore.ToString();      // text z drugiego dziecka pierwszego dziecka
         }
         livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
         ResetTimer();
@@ -72,20 +90,21 @@ public class GameController : MonoBehaviour
 
     public void LevelCompleted()
     {
-        Debug.Log("Victory");
-        totalScore.Add(currentLevelScore);
-        foreach(var score in totalScore)
-        {
-            Debug.Log(score);
-        }
-        
-        // add score to total
-        // reset level score
-        // "you win" canvas
-        // load next scene
+        scoreList.Add(currentLevelScore);
+        currentLevelScore = 0;
+        StartCoroutine(HandleVictory());
         
     }
 
+    IEnumerator HandleVictory()
+    {
+        var player = FindObjectOfType<Player>();
+        Destroy(player);
+        levelCompletedCanvas.SetActive(true);
+        yield return new WaitForSeconds(delayOnLevelComplete);
+        levelCompletedCanvas.SetActive(false);
+        FindObjectOfType<LevelLoader>().LoadNextScene();
+    }
     public void AddScoreForLane()
     {
         currentLevelScore += pointsPerLaneVisited;
@@ -97,5 +116,10 @@ public class GameController : MonoBehaviour
         int remainingTime = Mathf.FloorToInt(timeLimit - timeDisplay.value);
         currentLevelScore += pointsPerSecondLeft * remainingTime;
         scoreDisplay.text = currentLevelScore.ToString();
+    }
+
+    public void ResetGameSession()
+    {
+        Destroy(gameObject);
     }
 }
