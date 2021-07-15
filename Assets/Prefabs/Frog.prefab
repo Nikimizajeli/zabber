@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathIconPrefab: {fileID: 8000239946173271860, guid: 2f233a116ce88a24c9981594579f5847, type: 3}
+  frogDeathSound: {fileID: 8300000, guid: 5563c23c192914a4d8bae191f879405d, type: 3}
+  frogDeathSoundVolume: 0.8
 --- !u!50 &191972671
 Rigidbody2D:
   serializedVersion: 4

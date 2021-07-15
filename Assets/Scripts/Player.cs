@@ -6,6 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour moga zostac uzyte w Player
 {
     [SerializeField] GameObject deathIconPrefab;
+    [SerializeField] AudioClip frogDeathSound;
+    [Range(0,1)]
+    [SerializeField] float frogDeathSoundVolume = 0.5f;
 
     private int leftPlayspaceBorder;        // enkapsulacja - dostep 'z zewnatrz' jest ograniczony
     private int rightPlayspaceBorder;       // modyfikator dostepu private - pole jest dostepne tylko dla metod klasy w ktorej siê znajduje
@@ -143,6 +146,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     {
         var deathIcon = Instantiate(deathIconPrefab, transform.position, Quaternion.identity);
         Destroy(deathIcon, 1);
+        AudioSource.PlayClipAtPoint(frogDeathSound, Camera.main.transform.position, frogDeathSoundVolume);          // odtworzenie dzwieku z pozycji glownej kamery
         FindObjectOfType<GameController>().LoseLife();
         ResetPosition();
     }
