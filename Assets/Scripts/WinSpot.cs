@@ -9,7 +9,7 @@ public class WinSpot : MonoBehaviour
 
     private static int winSpotsNumber;          // pole statyczne, wartosc wspolna dla wszystkich instancji
     private static int winSpotsWithFrogs = 0;
-    private bool hasFrog = false;
+    public bool hasFrog = false;
 
     private void Start()
     {

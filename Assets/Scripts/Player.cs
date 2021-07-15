@@ -60,7 +60,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            CheckForWinSpot();
+            if (CheckForWinSpot()){ return; }
             if (transform.position.y < topPlayspaceBorder)
             {
                 ProcessMove(Vector3.up, Quaternion.Euler(0, 0, 180));
@@ -93,15 +93,17 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         }
     }
 
-    private void CheckForWinSpot()
+    private bool CheckForWinSpot()
     {
         foreach (var winspot in winSpots)
         {
             if (Vector3.Distance(winspot.transform.position, transform.position) <= 1.1f)
             {
                 winspot.TryToMoveFrogToWinSpot();
+                return true;
             }        
         }
+        return false;
     }
 
     private void ProcessMove(Vector3 deltaPosition, Quaternion facingRotation)      // kod powtarzany kilka razy wyodrebniony jako oddzielna metoda
