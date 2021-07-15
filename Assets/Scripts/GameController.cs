@@ -29,18 +29,19 @@ public class GameController : MonoBehaviour
         if (timeDisplay.value >= timeLimit)
         {
             triggeredLevelFinished = true;
-            Debug.Log("Game Over");
+            LoseLife();
         }
     }
 
     public void LoseLife()
     {
         numberOfLives--;
-        livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
-        timeDisplay.value = 0;
         if(numberOfLives <= 0)
         {
             Debug.Log("GameOver");
         }
+        livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
+        timeDisplay.value = 0;
+        FindObjectOfType<Player>().ResetPosition();
     }
 }

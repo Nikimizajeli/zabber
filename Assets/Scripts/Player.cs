@@ -102,11 +102,14 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(HazardsLayerName)))
         {
             FindObjectOfType<GameController>().LoseLife();
-            transform.position = startingPosition;
-            transform.rotation = Quaternion.Euler(0, 0, 180);
         }
-        
-        
+
+
     }
 
+    public void ResetPosition()
+    {
+        transform.position = startingPosition;
+        transform.rotation = Quaternion.Euler(0, 0, 180);
+    }
 }
