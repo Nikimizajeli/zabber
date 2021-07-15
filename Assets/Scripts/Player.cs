@@ -101,6 +101,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
         if (GetComponent<Collider2D>().IsTouchingLayers(LayerMask.GetMask(HazardsLayerName)))
         {
+            FindObjectOfType<GameController>().LoseLife();
             transform.position = startingPosition;
         }
         
