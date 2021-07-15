@@ -13,13 +13,37 @@ public class Spawner : MonoBehaviour
     [SerializeField] Vehicle[] vehiclePrefabs;
 
     bool keepSpawning = true;           // domyslny modyfikator dostepu dla zmiennej - private
+    bool emptyRoad = true;
     
     IEnumerator Start()         // coroutine
     {
         while (keepSpawning)
         {
+            if (emptyRoad)
+            {
+                FirstSpawn();
+            }
+
             yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
             SpawnVehicle();
+        }
+    }
+
+    private void FirstSpawn()
+    {
+        for(int i=0; i < 5; i++)
+        {
+            var offset = Random.Range(5, 6);
+            var vehicle = Random.Range(0, vehiclePrefabs.Length);
+            if (spawnLeft)
+            {
+                Spawn(vehicle, Vector3.left * i * offset);
+            }
+            else
+            {
+                Spawn(vehicle, Vector3.right * i * offset);
+            }
+            emptyRoad = false;
         }
     }
 
