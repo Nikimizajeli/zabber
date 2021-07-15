@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +15,15 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
 
     private Animator myAnimator;
     private Vector3 startingPosition;
+    private WinSpot[] winSpots;
 
     // konstruktor domyslny - modyfikator dostepu public, brak argumentow, inicjuje wartosci pol zerem/false/null
     private void Start()
     {
         myAnimator = GetComponent<Animator>();      // referencja do animatora, zeby nie wykonywac GetComponent przy kazdym ruchu
         startingPosition = transform.position;      // zapisanie startowej pozycji zaby, zeby pojawiac sie w tym samym miejscu po stracie zycia
+
+        winSpots = FindObjectsOfType<WinSpot>();
 
         SetMovementBounds();
         
@@ -41,10 +45,11 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-             if (transform.position.y < topPlayspaceBorder)
-             {
+            CheckForWinSpot();
+            if (transform.position.y < topPlayspaceBorder)
+            {
                  ProcessMove(Vector3.up, Quaternion.Euler(0, 0, 180));
-             }
+            }
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))       // else if, zeby nie sprawdzac kolejnych strzalek jesli ktoras 'wyzej' jest wcisnieta
         {
@@ -66,6 +71,17 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
             {
                 ProcessMove(Vector3.left, Quaternion.Euler(0, 0, -90));
             }
+        }
+    }
+
+    private void CheckForWinSpot()
+    {
+        foreach (var winspot in winSpots)
+        {
+            if (Vector3.Distance(winspot.transform.position, transform.position) <= 1.1f)
+            {
+                winspot.TryToMoveFrogToWinSpot();
+            }        
         }
     }
 
@@ -111,5 +127,6 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     {
         transform.position = startingPosition;
         transform.rotation = Quaternion.Euler(0, 0, 180);
+        transform.parent = null;
     }
 }

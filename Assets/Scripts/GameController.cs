@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,37 +12,44 @@ public class GameController : MonoBehaviour
     [Header("Time")]
     [SerializeField] float timeLimit = 30f;
     [SerializeField] Slider timeDisplay;
-
-    bool triggeredLevelFinished = false;
-
+    
+    
     private void Start()
     {
         timeDisplay.maxValue = timeLimit;
-
+        
         livesDisplayText.text = numberOfLives.ToString();
     }
 
     private void Update()
     {
-        if (triggeredLevelFinished) { return; }
-        
         timeDisplay.value += Time.deltaTime;
         if (timeDisplay.value >= timeLimit)
         {
-            triggeredLevelFinished = true;
             LoseLife();
         }
     }
-
+        
     public void LoseLife()
     {
         numberOfLives--;
-        if(numberOfLives <= 0)
+        if (numberOfLives <= 0)
         {
             Debug.Log("GameOver");
         }
         livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
-        timeDisplay.value = 0;
+        ResetTimer();
         FindObjectOfType<Player>().ResetPosition();
+    }
+
+    public void ResetTimer()
+    {
+        timeDisplay.value = 0;
+    }
+
+    public void LevelCompleted()
+    {
+        Debug.Log("Victory");
+        
     }
 }

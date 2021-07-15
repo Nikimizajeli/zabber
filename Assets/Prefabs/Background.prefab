@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5564907018964818461}
   - component: {fileID: 5564907018964818460}
   m_Layer: 0
-  m_Name: Win Spots
+  m_Name: Grass Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,10 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5564907019564829766}
-  - {fileID: 5564907019898113969}
-  - {fileID: 5564907019219454918}
+  m_Children: []
   m_Father: {fileID: 2941278265734223822}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564907019103097609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: 0}
+  m_LocalPosition: {x: 0, y: 9.5, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2941278265734223822}
@@ -204,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564907019219454918}
   - component: {fileID: 5564907019219454919}
+  - component: {fileID: 432714037691204371}
   m_Layer: 0
   m_Name: Win Spot (2)
   m_TagString: Untagged
@@ -219,11 +217,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564907019219454913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5564907018964818461}
-  m_RootOrder: 2
+  m_Father: {fileID: 2941278265734223822}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5564907019219454919
 SpriteRenderer:
@@ -276,6 +274,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &432714037691204371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564907019219454913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73c82c543285bb4ea9beb4e9a39ad3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5564907019564829761
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564907019564829766}
   - component: {fileID: 5564907019564829767}
+  - component: {fileID: 7550087096377326150}
   m_Layer: 0
   m_Name: Win Spot (0)
   m_TagString: Untagged
@@ -301,11 +312,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564907019564829761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: 12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5564907018964818461}
-  m_RootOrder: 0
+  m_Father: {fileID: 2941278265734223822}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5564907019564829767
 SpriteRenderer:
@@ -358,6 +369,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7550087096377326150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564907019564829761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73c82c543285bb4ea9beb4e9a39ad3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5564907019898113968
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564907019898113969}
   - component: {fileID: 5564907019898113974}
+  - component: {fileID: 3786752527483346763}
   m_Layer: 0
   m_Name: Win Spot (1)
   m_TagString: Untagged
@@ -383,11 +407,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564907019898113968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5564907018964818461}
-  m_RootOrder: 1
+  m_Father: {fileID: 2941278265734223822}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5564907019898113974
 SpriteRenderer:
@@ -440,6 +464,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3786752527483346763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5564907019898113968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73c82c543285bb4ea9beb4e9a39ad3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5564907020371830252
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +754,9 @@ Transform:
   - {fileID: 5564907020371830242}
   - {fileID: 5564907020403363563}
   - {fileID: 5564907018964818461}
+  - {fileID: 5564907019564829766}
+  - {fileID: 5564907019898113969}
+  - {fileID: 5564907019219454918}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
