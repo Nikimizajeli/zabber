@@ -103,6 +103,7 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         {
             FindObjectOfType<GameController>().LoseLife();
             transform.position = startingPosition;
+            transform.rotation = Quaternion.Euler(0, 0, 180);
         }
         
         

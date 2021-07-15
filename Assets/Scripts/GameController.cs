@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         if (triggeredLevelFinished) { return; }
+        
         timeDisplay.value += Time.deltaTime;
         if (timeDisplay.value >= timeLimit)
         {
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
     {
         numberOfLives--;
         livesDisplayText.GetComponent<Text>().text = numberOfLives.ToString();
+        timeDisplay.value = 0;
         if(numberOfLives <= 0)
         {
             Debug.Log("GameOver");
