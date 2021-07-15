@@ -91,7 +91,6 @@ public class GameController : MonoBehaviour
     public void LevelCompleted()
     {
         scoreList.Add(currentLevelScore);
-        currentLevelScore = 0;
         StartCoroutine(HandleVictory());
         
     }
@@ -101,6 +100,8 @@ public class GameController : MonoBehaviour
         var player = FindObjectOfType<Player>();
         Destroy(player);
         levelCompletedCanvas.SetActive(true);
+        levelCompletedCanvas.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = "Level score: " + currentLevelScore.ToString();
+        currentLevelScore = 0;
         yield return new WaitForSeconds(delayOnLevelComplete);
         levelCompletedCanvas.SetActive(false);
         FindObjectOfType<LevelLoader>().LoadNextScene();
