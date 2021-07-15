@@ -28,7 +28,7 @@ public class CheatCode : MonoBehaviour
                 cheatIndex++;                           
                 if(cheatIndex >= cheatCode.Length)
                 {
-                    FindObjectOfType<LevelLoader>().LoadNextScene();            // wykonanie cheatu
+                    FindObjectOfType<GameController>().LevelCompleted();            // wykonanie cheatu
                 }
             }
             else
