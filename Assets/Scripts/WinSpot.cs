@@ -21,6 +21,7 @@ public class WinSpot : MonoBehaviour
         if (hasFrog) { return; }
         winSpotsWithFrogs++;
         Instantiate(winMarkerPrefab, transform.position, Quaternion.identity);
+        hasFrog = true;
         FindObjectOfType<GameController>().AddScoreForTime();
         if (winSpotsWithFrogs >= winSpotsNumber)
         {
