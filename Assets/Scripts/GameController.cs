@@ -12,13 +12,37 @@ public class GameController : MonoBehaviour
     [Header("Time")]
     [SerializeField] float timeLimit = 30f;
     [SerializeField] Slider timeDisplay;
-    
-    
+    [Header("Score")] 
+    [SerializeField] Text scoreDisplay;
+    public int pointsPerSecondLeft = 50;
+    public int pointsPerLaneVisited = 50;
+
+    private List<int> totalScore;
+    private int currentLevelScore;
+
+    private void Awake()
+    {
+        int numberOfGameControllers = FindObjectsOfType<GameController>().Length;
+        if (numberOfGameControllers > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     private void Start()
     {
         timeDisplay.maxValue = timeLimit;
         
         livesDisplayText.text = numberOfLives.ToString();
+
+        totalScore = new List<int>();
+        currentLevelScore = 0;
+        scoreDisplay.text = currentLevelScore.ToString();
     }
 
     private void Update()
@@ -51,5 +75,17 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Victory");
         
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        currentLevelScore += scoreToAdd;
+        scoreDisplay.text = currentLevelScore.ToString();
+    }
+
+    public int GetRemainingTime()
+    {
+        int remainingTime = Mathf.FloorToInt(timeLimit - timeDisplay.value);
+        return remainingTime;
     }
 }
