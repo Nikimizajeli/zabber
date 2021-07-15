@@ -18,13 +18,15 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
     private WinSpot[] winSpots;
 
     private int visitedLaneIndex;
+    private int startingLaneIndex;
 
     // konstruktor domyslny - modyfikator dostepu public, brak argumentow, inicjuje wartosci pol zerem/false/null
     private void Start()
     {
         myAnimator = GetComponent<Animator>();      // referencja do animatora, zeby nie wykonywac GetComponent przy kazdym ruchu
         startingPosition = transform.position;      // zapisanie startowej pozycji zaby, zeby pojawiac sie w tym samym miejscu po stracie zycia
-        visitedLaneIndex = Mathf.RoundToInt(transform.position.y);
+        startingLaneIndex = Mathf.RoundToInt(transform.position.y);
+        visitedLaneIndex = startingLaneIndex;
 
         winSpots = FindObjectsOfType<WinSpot>();
 
@@ -135,12 +137,12 @@ public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadekla
         transform.position = startingPosition;
         transform.rotation = Quaternion.Euler(0, 0, 180);
         transform.parent = null;
+        visitedLaneIndex = startingLaneIndex;
     }
 
     private void AddPointsForNewLane()
     {
-        var points = FindObjectOfType<GameController>().pointsPerLaneVisited;
-        FindObjectOfType<GameController>().AddScore(points);
+        FindObjectOfType<GameController>().AddScoreForLane();
         visitedLaneIndex++;
     }
 }

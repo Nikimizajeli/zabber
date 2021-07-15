@@ -77,15 +77,16 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void AddScore(int scoreToAdd)
+    public void AddScoreForLane()
     {
-        currentLevelScore += scoreToAdd;
+        currentLevelScore += pointsPerLaneVisited;
         scoreDisplay.text = currentLevelScore.ToString();
     }
 
-    public int GetRemainingTime()
+    public void AddScoreForTime()
     {
         int remainingTime = Mathf.FloorToInt(timeLimit - timeDisplay.value);
-        return remainingTime;
+        currentLevelScore += pointsPerSecondLeft * remainingTime;
+        scoreDisplay.text = currentLevelScore.ToString();
     }
 }
