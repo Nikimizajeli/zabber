@@ -31,9 +31,9 @@ public class Spawner : MonoBehaviour
 
     private void FirstSpawn()
     {
-        for(int i=0; i < 5; i++)
+        for(int i=0; i < 4; i++)
         {
-            var offset = Random.Range(5, 6);
+            var offset = Random.Range(6, 7);
             var vehicle = Random.Range(0, vehiclePrefabs.Length);
             if (spawnLeft)
             {
