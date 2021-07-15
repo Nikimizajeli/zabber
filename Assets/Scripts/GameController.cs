@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     private int currentLevelScore;
     private int totalScore;
 
-    private void Awake()
+    private void Awake()                                                                    // wzorzec projektowy singleton
     {
         int numberOfGameControllers = FindObjectsOfType<GameController>().Length;
         if (numberOfGameControllers > 1)
