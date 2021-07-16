@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;      // dyrektywa dodaj¹ca przestrzeñ nazw od zarz¹dzania scenami
 

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour     // dziedziczenie - pola i metody zadeklarowane w MonoBehaviour moga zostac uzyte w Player
