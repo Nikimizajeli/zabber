@@ -56,6 +56,10 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            FindObjectOfType<LevelLoader>().QuitGame();
+        }
         timeDisplay.value += Time.deltaTime;
         if (timeDisplay.value >= timeLimit)
         {
