@@ -7,12 +7,13 @@ public class WinSpot : MonoBehaviour
     [SerializeField] GameObject winMarkerPrefab;
     
 
-    private static int winSpotsNumber;          // pole statyczne, wartosc wspolna dla wszystkich instancji
-    private static int winSpotsWithFrogs = 0;
+    private static int winSpotsNumber;          // pole statyczne, wartosc wspolna dla wszystkich instancji, nie resetuje sie przy zmianie sceny
+    private static int winSpotsWithFrogs;
     public bool hasFrog = false;
 
     private void Start()
     {
+        winSpotsWithFrogs = 0;
         winSpotsNumber = FindObjectsOfType<WinSpot>().Length;
     }
 

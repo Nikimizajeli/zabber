@@ -105,6 +105,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(delayOnLevelComplete);
         levelCompletedCanvas.SetActive(false);
         FindObjectOfType<LevelLoader>().LoadNextScene();
+        ResetTimer();
     }
     public void AddScoreForLane()
     {
