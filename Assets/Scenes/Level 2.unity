@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: spawnLeft
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: minSpawnDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130577, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -202,20 +214,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: maxSpawnDelay
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: minSpawnDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1476382923810843663, guid: d2d40f10276340c4a8587d4c469b4ef1, type: 3}
+      objectReference: {fileID: 1384909740, guid: b14f8a95c2b9e9b42b470471345a3b18, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[1]
       value: 
@@ -435,11 +451,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: maxSpawnDelay
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: minSpawnDelay
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.size
@@ -452,7 +472,7 @@ PrefabInstance:
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1384909740, guid: b14f8a95c2b9e9b42b470471345a3b18, type: 3}
+      objectReference: {fileID: 482220036290862581, guid: d0dd434e0d8b8064382941bda55051d2, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[2]
       value: 
@@ -530,19 +550,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: maxSpawnDelay
-      value: 3
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: minSpawnDelay
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[0]
@@ -551,11 +571,11 @@ PrefabInstance:
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 2652225490877895167, guid: 2f44d1312479e3f479fdd443b7104932, type: 3}
+      objectReference: {fileID: 1476382923810843663, guid: d2d40f10276340c4a8587d4c469b4ef1, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 1384909740, guid: b14f8a95c2b9e9b42b470471345a3b18, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130577, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -624,28 +644,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: maxSpawnDelay
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: minSpawnDelay
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1476382923810843663, guid: d2d40f10276340c4a8587d4c469b4ef1, type: 3}
+      objectReference: {fileID: 482220036290862581, guid: d0dd434e0d8b8064382941bda55051d2, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1384909740, guid: b14f8a95c2b9e9b42b470471345a3b18, type: 3}
+      objectReference: {fileID: 2652225490877895167, guid: 2f44d1312479e3f479fdd443b7104932, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1476382923810843663, guid: d2d40f10276340c4a8587d4c469b4ef1, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[3]
       value: 
@@ -711,6 +735,30 @@ PrefabInstance:
       propertyPath: spawnLeft
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: minSpawnDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8084603248432105682, guid: 47f5aca194e35234ea6e69c406fa7779, type: 3}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8539888504029474228, guid: 67e0e0a92e9b4734dbaf41c07f99efce, type: 3}
     - target: {fileID: 7044789100671130577, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -818,11 +866,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: maxSpawnDelay
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: minSpawnDelay
-      value: 1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.size
@@ -835,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1384909740, guid: b14f8a95c2b9e9b42b470471345a3b18, type: 3}
+      objectReference: {fileID: 2652225490877895167, guid: 2f44d1312479e3f479fdd443b7104932, type: 3}
     - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: vehiclePrefabs.Array.data[2]
       value: 
@@ -906,6 +958,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764839496}
     m_Modifications:
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: minSpawnDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5162933097177313850, guid: c68f31eb95f1c4147b17c62a2470acc7, type: 3}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7044789100671130577, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1350,6 +1426,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1764839496}
     m_Modifications:
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: maxSpawnDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: minSpawnDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8084603248432105682, guid: 47f5aca194e35234ea6e69c406fa7779, type: 3}
+    - target: {fileID: 7044789100671130576, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
+      propertyPath: vehiclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6266127232502162374, guid: eccedcc50b1161d43aa05feacdfc8b4e, type: 3}
     - target: {fileID: 7044789100671130577, guid: 7eeb7aa356810fe45bf8544c21018a02, type: 3}
       propertyPath: m_RootOrder
       value: 0
