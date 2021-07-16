@@ -60,6 +60,13 @@ public class GameController : MonoBehaviour
         {
             FindObjectOfType<LevelLoader>().QuitGame();
         }
+        if (gameOverCanvas.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                FindObjectOfType<LevelLoader>().LoadStartScene();
+            }
+        }
         timeDisplay.value += Time.deltaTime;
         if (timeDisplay.value >= timeLimit)
         {
@@ -126,5 +133,14 @@ public class GameController : MonoBehaviour
     public void ResetGameSession()
     {
         Destroy(gameObject);
+    }
+
+    public int GetTotalScore()
+    {
+        foreach (var score in scoreList)
+        {
+            totalScore += score;
+        }
+        return totalScore;
     }
 }
